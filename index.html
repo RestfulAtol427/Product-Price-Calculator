@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="index.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Nagios Product Beautiful Perfect Super Calculator</title>
+    <header positionn="fixed"></header>
+  </head>
+
+  <body>
+    <h1>Nagios Suite Product Pricing Calculator</h1>
+    <!--Product Checkboxes-->
+    <fieldset id="productSuiteCheckbox">
+      <legend>Choose the Nagios Suite products you would like to view:</legend>
+      <div>
+        <input
+          type="checkbox"
+          id="xiCheckBox"
+          name="calculatePriceFor"
+          value="xiCheckBox"
+        />
+        <label for="xiCheckBox">XI</label>
+      </div>
+      <div>
+        <input
+          type="checkbox"
+          id="logServerCheckBox"
+          name="calculatePriceFor"
+          value="logServerCheckBox"
+        />
+        <label for="logServerCheckBox">Log Server</label>
+      </div>
+      <div>
+        <input
+          type="checkbox"
+          id="networkAnalyzerCheckBox"
+          name="calculatePriceFor"
+          value="networkAnalyzerCheckBox"
+        />
+        <label for="networkAnalyzerCheckBox">Network Analyzer</label>
+      </div>
+      <div>
+        <input
+          type="checkbox"
+          id="fusionCheckBox"
+          name="calculatePriceFor"
+          value="fusionCheckBox"
+        />
+        <label for="fusionCheckBox">Fusion</label>
+      </div>
+    </fieldset>
+
+    <!--XI Calculator-->
+    <div class="" id="xiCalculator">
+      <h2>Nagios XI Calculator</h2>
+      <!--Renewal Section-->
+      <form>
+        <fieldset required>
+          <legend>Is this a Renewal or a New License?</legend>
+          <div>
+            <input
+              type="radio"
+              id="xiNewChosen"
+              name="xiPurchaseType"
+              value="xiNewChosen"
+              checked
+            />
+            <label for="xiNewChosen">New License</label>
+            <br />
+            <input
+              type="radio"
+              id="xiRenewalChosen"
+              name="xiPurchaseType"
+              value="xiRenewalChosen"
+            />
+            <label for="xiRenewalChosen">License Renewal</label>
+          </div>
+        </fieldset>
+      </form>
+      <br />
+      <label for="xiLecenseQuote">Number of licenses needed:</label
+      ><!--Licenses or Locations-->
+      <input id="xiLicenseQuote" type="number" value="1" min="1" max="50" />
+      <br /><br />
+      <!--Nodes to Monitor (Pop out??)-->
+      <div>
+        <legend>Number of seperate XI licenses to purchase:</legend>
+        <span
+          class="openbtn"
+          onclick="openWindow()"
+          title="Open Nagios XI Device List"
+          >Open List</span
+        >
+        <!--open overlayed window-->
+        <div id="myOverlay" class="overlay">
+          <span class="closebtn" onclick="closeWindow()" title="Close Overlay">Close</span>
+          <!--close overlayed window-->
+          <div id="overlayCard">
+            <button class="collapsible">Office</button>
+                <div class="content">
+                    <ul>
+                        <li><a href="#">Option 1</a></li>
+                        <li><a href="#">Option 2</a></li>
+                        <li><a href="#">Option 3</a></li>
+                    </ul>
+                </div>
+          </div>
+        </div>
+      </div>
+      <br />
+      <!--Enterprise Add-on Section-->
+      <form>
+        <fieldset>
+          <legend>Upgrade to Enterprise Edition?</legend>
+          <div>
+            <input
+              type="radio"
+              id="xiEnterpriseChosen"
+              name="xiEnterpriseUpgrade"
+              value="xiEnterpriseChosen"
+              checked
+            />
+            <label for="xiEnterpriseChosen">Upgrade</label>
+            <br />
+            <input
+              type="radio"
+              id="xiStandardChosen"
+              name="xiEnterpriseUpgrade"
+              value="xiStandardChosen"
+            />
+            <label for="xiStandardChosen">Standard</label>
+          </div>
+        </fieldset>
+      </form>
+      <br />
+      <!--Phone Support Package-->
+      <label for="phonePackage">Choose a Phone Support Package:</label>
+      <select name="phonePackage" id="phoneSupportPackage">
+        <option value="10Phone">10</option>
+        <option value="5Phone">5</option>
+        <option value="0Phone">0</option>
+      </select>
+      <br /><br />
+      <!--Case Support Package-->
+      <label for="casePackage">Choose a Case Support Package:</label>
+      <select name="casePackage" id="caseSupportPackage">
+        <option value="10Cases">10</option>
+        <option value="5Cases">5</option>
+        <option value="0Cases">0</option>
+      </select>
+    </div>
+
+    <!--Log Server Calculator-->
+    <div class="" id="lsCalculator">
+      <h2>Nagios Log Server Calculator</h2>
+    </div>
+  </body>
+</html>

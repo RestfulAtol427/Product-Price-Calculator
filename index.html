@@ -106,13 +106,29 @@
           <span class="closebtn" onclick="closeWindow()" title="Close Overlay">Close</span>
           <!--close overlayed window-->
           <div id="overlayCard">
-            <button class="collapsible">Office</button>
+            <button class="collapsibleOffice" onclick="displayOffice()">Office</button>
                 <div class="content">
-                    <ul>
-                        <li><a href="#">Option 1</a></li>
-                        <li><a href="#">Option 2</a></li>
-                        <li><a href="#">Option 3</a></li>
-                    </ul>
+                  <table>
+                    <tr>
+                        <th>Device types</th>
+                        <th>Number of devices</th>
+                        <th>Number of service checks</th>
+                    </tr>
+                    <tr>
+                        <td><label class="form-label">Computers
+                            <img src="assets/img/help.png" width="16" data-toggle="tooltip" data-placement="right" title="Info about computers">
+                            </label></td>
+                        <td><input id="text-value-retention" class="input-value form-control"  value="0" type="number" min="0" max="2000"></td>
+                        <td><input id="text-value-retention" class="input-value form-control"  value="0" type="number" min="0" max="10000"></td>
+                    </tr>
+                    <tr>
+                        <td><label class="form-label">Printers
+                            <img src="assets/img/help.png" width="16" data-toggle="tooltip" data-placement="right" title="Info about printers">
+                        </label></td>
+                        <td><input id="text-value-retention" class="input-value form-control"  value="0" type="number" min="0" max="2000"></td>
+                        <td><input id="text-value-retention" class="input-value form-control"  value="0" type="number" min="0" max="10000"></td>
+                    </tr>
+                  </table>
                 </div>
           </div>
         </div>

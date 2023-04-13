@@ -23,142 +23,210 @@
     <fieldset id="productSuiteCheckbox">
       <legend>Choose the Nagios Suite products you would like to view:</legend>
       <div>
-        <input
-          type="checkbox"
-          id="xiCheckBox"
-          name="calculatePriceFor"
-          value="xiCheckBox"
-        />
-        <label for="xiCheckBox">XI</label>
+        <input type="checkbox" id="xiCheckbox" name="calculatePriceFor" value="xiCheckbox"/>
+        <label for="xiCheckbox">XI</label>
       </div>
       <div>
-        <input
-          type="checkbox"
-          id="logServerCheckBox"
-          name="calculatePriceFor"
-          value="logServerCheckBox"
-        />
-        <label for="logServerCheckBox">Log Server</label>
+        <input type="checkbox" id="logServerCheckbox" name="calculatePriceFor" value="logServerCheckbox"/>
+        <label for="logServerCheckbox">Log Server</label>
       </div>
       <div>
-        <input
-          type="checkbox"
-          id="networkAnalyzerCheckBox"
-          name="calculatePriceFor"
-          value="networkAnalyzerCheckBox"
-        />
-        <label for="networkAnalyzerCheckBox">Network Analyzer</label>
+        <input type="checkbox" id="networkAnalyzerCheckbox" name="calculatePriceFor" value="networkAnalyzerCheckbox"/>
+        <label for="networkAnalyzerCheckbox">Network Analyzer</label>
       </div>
       <div>
-        <input
-          type="checkbox"
-          id="fusionCheckBox"
-          name="calculatePriceFor"
-          value="fusionCheckBox"
-        />
-        <label for="fusionCheckBox">Fusion</label>
+        <input type="checkbox" id="fusionCheckbox" name="calculatePriceFor" value="fusionCheckbox"/>
+        <label for="fusionCheckbox">Fusion</label>
       </div>
     </fieldset>
 
     <!--XI Calculator-->
-    <div class="" id="xiCalculator">
+    <div id="xiCalculator">
       <h2>Nagios XI Calculator</h2>
       <!--Renewal Section-->
       <form>
         <fieldset required>
           <legend>Is this a Renewal or a New License?</legend>
           <div>
-            <input
-              type="radio"
-              id="xiNewChosen"
-              name="xiPurchaseType"
-              value="xiNewChosen"
-              checked
-            />
+            <input type="radio" id="xiNewChosen" name="xiPurchaseType" value="xiNewChosen" checked />
             <label for="xiNewChosen">New License</label>
             <br />
-            <input
-              type="radio"
-              id="xiRenewalChosen"
-              name="xiPurchaseType"
-              value="xiRenewalChosen"
-            />
+            <input type="radio" id="xiRenewalChosen" name="xiPurchaseType" value="xiRenewalChosen" />
             <label for="xiRenewalChosen">License Renewal</label>
           </div>
         </fieldset>
       </form>
-      <br />
-      <label for="xiLecenseQuote">Number of licenses needed:</label
-      ><!--Licenses or Locations-->
-      <input id="xiLicenseQuote" type="number" value="1" min="1" max="50" />
       <br /><br />
-      <!--Nodes to Monitor (Pop out??)-->
+      <label for="xiLecenseQuote">Number of licenses needed:</label>
+      <input id="xiLicenseQuote" type="number" value="1" min="1" max="50" />
+      <br /><br /><br />
+      <!--Nodes to Monitor-->
       <div>
         <legend>Number of seperate XI licenses to purchase:</legend>
-        <span
-          class="openbtn"
-          onclick="openWindow()"
-          title="Open Nagios XI Device List"
-          >Open List</span
-        >
-        <!--open overlayed window-->
-        <div id="myOverlay" class="overlay">
-          <span class="closebtn" onclick="closeWindow()" title="Close Overlay">Close</span>
-          <!--close overlayed window-->
-          <div id="overlayCard">
-            <button class="collapsibleOffice" onclick="displayOffice()">Office</button>
-                <div class="content">
-                  <table>
-                    <tr>
-                        <th>Device types</th>
-                        <th>Number of devices</th>
-                        <th>Number of service checks</th>
-                    </tr>
-                    <tr>
-                        <td><label class="form-label">Computers
-                            <img src="assets/img/help.png" width="16" data-toggle="tooltip" data-placement="right" title="Info about computers">
-                            </label></td>
-                        <td><input id="text-value-retention" class="input-value form-control"  value="0" type="number" min="0" max="2000"></td>
-                        <td><input id="text-value-retention" class="input-value form-control"  value="0" type="number" min="0" max="10000"></td>
-                    </tr>
-                    <tr>
-                        <td><label class="form-label">Printers
-                            <img src="assets/img/help.png" width="16" data-toggle="tooltip" data-placement="right" title="Info about printers">
-                        </label></td>
-                        <td><input id="text-value-retention" class="input-value form-control"  value="0" type="number" min="0" max="2000"></td>
-                        <td><input id="text-value-retention" class="input-value form-control"  value="0" type="number" min="0" max="10000"></td>
-                    </tr>
-                  </table>
-                </div>
-          </div>
+        <button class="openbtn" onclick="openWindow()" title="Open Nagios XI Device List">Open List</button> <!--Open Overlay-->
+        <!--Node Table Overlay-->
+        <div id="xiTableOverlay" class="overlay">
+            <span class="closebtn" onclick="closeWindow()" title="Close Overlay">Update & Close</span> <!--Close Overlay-->
+            <div id="overlayCard">
+                <table>
+                    <thead class="toggleTableHeader">
+                        <tr>
+                            <th>Common Node Types</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!--Office Node Category-->
+                        <tr class="toggleTableCategory" onclick="toggleTable(this)">
+                            <td class="xiNodeCategory">Office</td>
+                        </tr>
+                        <tr class="sub-table">
+                            <td colspan="3">
+                                <table>
+                                    <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>Number of Nodes</th>
+                                        <th>Services per Node</th>
+                                        <th>Total Serverices of Node Type</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>Computer</td>
+                                        <td><input type="number" default="0"></td>
+                                        <td><input type="number" default="0"></td>
+                                        <td>Services</td>
+                                    </tr>
+                                    <tr>
+                                        <td>TV</td>
+                                        <td><input type="number" default="0"></td>
+                                        <td><input type="number" default="0"></td>
+                                        <td>Services</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Printer</td>
+                                        <td><input type="number" default="0"></td>
+                                        <td><input type="number" default="0"></td>
+                                        <td>Services</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                        <!--Network Node Category-->
+                        <tr class="toggleTableCategory" onclick="toggleTable(this)">
+                            <td class="xiNodeCategory">Network</td>
+                        </tr>
+                        <tr class="sub-table">
+                            <td colspan="3">
+                                <table>
+                                    <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>Number of Nodes</th>
+                                        <th>Services per Node</th>
+                                        <th>Total Serverices of Node Type</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>24-Port Switch</td>
+                                        <td><input type="number" default="0" min="0" step="1"></td>
+                                        <td><input type="number" default="0" min="0" step="1"></td>
+                                        <td>Services</td>
+                                    </tr>
+                                    <tr>
+                                        <td>48-Port Switch</td>
+                                        <td><input type="number" default="0" min="0" step="1"></td>
+                                        <td><input type="number" default="0" min="0" step="1"></td>
+                                        <td>Services</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Firewall</td>
+                                        <td><input type="number" default="0" min="0" step="1"></td>
+                                        <td><input type="number" default="0" min="0" step="1"></td>
+                                        <td>Services</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Router</td>
+                                        <td><input type="number" default="0" min="0" step="1"></td>
+                                        <td><input type="number" default="0" min="0" step="1"></td>
+                                        <td>Services</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Access Point</td>
+                                        <td><input type="number" default="0" min="0" step="1"></td>
+                                        <td><input type="number" default="0" min="0" step="1"></td>
+                                        <td>Services</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                        <!--Other Node Category-->
+                        <tr class="toggleTableCategory" onclick="toggleTable(this)">
+                            <td class="xiNodeCategory">Other</td>
+                        </tr>
+                        <tr class="sub-table">
+                            <td colspan="3">
+                                <table>
+                                    <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>Number of Nodes</th>
+                                        <th>Services per Node</th>
+                                        <th>Total Serverices of Node Type</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>Temp Sensor</td>
+                                        <td><input type="number" default="0" min="0" step="1"></td>
+                                        <td><input type="number" default="0" min="0" step="1"></td>
+                                        <td>Services</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Light Sensor</td>
+                                        <td><input type="number" default="0" min="0" step="1"></td>
+                                        <td><input type="number" default="0" min="0" step="1"></td>
+                                        <td>Services</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Humidity Sensor</td>
+                                        <td><input type="number" default="0" min="0" step="1"></td>
+                                        <td><input type="number" default="0" min="0" step="1"></td>
+                                        <td>Services</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Other Node</td>
+                                        <td><input type="number" default="0" min="0" step="1"></td>
+                                        <td><input type="number" default="0" min="0" step="1"></td>
+                                        <td>Services</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
       </div>
-      <br />
+      <br /> <br />
       <!--Enterprise Add-on Section-->
       <form>
         <fieldset>
           <legend>Upgrade to Enterprise Edition?</legend>
           <div>
-            <input
-              type="radio"
-              id="xiEnterpriseChosen"
-              name="xiEnterpriseUpgrade"
-              value="xiEnterpriseChosen"
-              checked
-            />
+            <input type="radio" id="xiEnterpriseChosen" name="xiEnterpriseUpgrade" value="xiEnterpriseChosen" checked />
             <label for="xiEnterpriseChosen">Upgrade</label>
             <br />
-            <input
-              type="radio"
-              id="xiStandardChosen"
-              name="xiEnterpriseUpgrade"
-              value="xiStandardChosen"
-            />
+            <input type="radio" id="xiStandardChosen" name="xiEnterpriseUpgrade" value="xiStandardChosen" />
             <label for="xiStandardChosen">Standard</label>
           </div>
         </fieldset>
       </form>
-      <br />
+      <br /><br />
       <!--Phone Support Package-->
       <label for="phonePackage">Choose a Phone Support Package:</label>
       <select name="phonePackage" id="phoneSupportPackage">
@@ -166,7 +234,7 @@
         <option value="5Phone">5</option>
         <option value="0Phone">0</option>
       </select>
-      <br /><br />
+      <br /><br /><br />
       <!--Case Support Package-->
       <label for="casePackage">Choose a Case Support Package:</label>
       <select name="casePackage" id="caseSupportPackage">
@@ -175,10 +243,11 @@
         <option value="0Cases">0</option>
       </select>
     </div>
-
+    <br /> <br />
     <!--Log Server Calculator-->
-    <div class="" id="lsCalculator">
-      <h2>Nagios Log Server Calculator</h2>
+    <div class="calcs" id="lsCalculator">
+        <h2>Nagios Log Server Calculator</h2>
+        
     </div>
   </body>
 </html>

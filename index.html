@@ -18,237 +18,109 @@
   </head>
 
   <body>
-    <h1>lol Nagios Suite Product Pricing Calculator</h1>
-    <h1>Nagios Suite Product Pricing Calculator lol</h1>
-    <!--Product Checkboxes-->
-    <fieldset id="productSuiteCheckbox">
-      <legend>Choose the Nagios Suite products you would like to view:</legend>
-      <div>
-        <input type="checkbox" id="xiCheckbox" name="calculatePriceFor" value="xiCheckbox"/>
-        <label for="xiCheckbox">XI</label>
-      </div>
-      <div>
-        <input type="checkbox" id="logServerCheckbox" name="calculatePriceFor" value="logServerCheckbox"/>
-        <label for="logServerCheckbox">Log Server</label>
-      </div>
-      <div>
-        <input type="checkbox" id="networkAnalyzerCheckbox" name="calculatePriceFor" value="networkAnalyzerCheckbox"/>
-        <label for="networkAnalyzerCheckbox">Network Analyzer</label>
-      </div>
-      <div>
-        <input type="checkbox" id="fusionCheckbox" name="calculatePriceFor" value="fusionCheckbox"/>
-        <label for="fusionCheckbox">Fusion</label>
-      </div>
-    </fieldset>
+    <h1>Nagios XI Node Calculator</h1>
 
     <!--XI Calculator-->
     <div id="xiCalculator">
-      <h2>Nagios XI Calculator</h2>
-      <!--Renewal Section-->
-      <form>
-        <fieldset required>
-          <legend>Is this a Renewal or a New License?</legend>
-          <div>
-            <input type="radio" id="xiNewChosen" name="xiPurchaseType" value="xiNewChosen" checked />
-            <label for="xiNewChosen">New License</label>
-            <br />
-            <input type="radio" id="xiRenewalChosen" name="xiPurchaseType" value="xiRenewalChosen" />
-            <label for="xiRenewalChosen">License Renewal</label>
-          </div>
-        </fieldset>
-      </form>
-      <br /><br />
-      <label for="xiLecenseQuote">Number of licenses needed:</label>
+      <br />
+      <!--Locations to Monitor-->
+      <label for="xiLecenseQuote">Number of locations to monitor:</label>
       <input id="xiLicenseQuote" type="number" value="1" min="1" max="50" />
       <br /><br /><br />
       <!--Nodes to Monitor-->
-      <div>
-        <legend>Number of seperate XI licenses to purchase:</legend>
-        <button class="openbtn" onclick="openWindow()" title="Open Nagios XI Device List">Open List</button> <!--Open Overlay-->
-        <!--Node Table Overlay-->
-        <div id="xiTableOverlay" class="overlay">
-            <span class="closebtn" onclick="closeWindow()" title="Close Overlay">Update & Close</span> <!--Close Overlay-->
-            <div id="overlayCard">
-                <table>
-                    <thead class="toggleTableHeader">
-                        <tr>
-                            <th>Common Node Types</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <!--Office Node Category-->
-                        <tr class="toggleTableCategory" onclick="toggleTable(this)">
-                            <td class="xiNodeCategory">Office</td>
-                        </tr>
-                        <tr class="sub-table">
-                            <td colspan="3">
-                                <table>
-                                    <thead>
-                                    <tr>
-                                        <th></th>
-                                        <th>Number of Nodes</th>
-                                        <th>Services per Node</th>
-                                        <th>Total Serverices of Node Type</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr>
-                                        <td>Computer</td>
-                                        <td><input type="number" default="0"></td>
-                                        <td><input type="number" default="0"></td>
-                                        <td>Services</td>
-                                    </tr>
-                                    <tr>
-                                        <td>TV</td>
-                                        <td><input type="number" default="0"></td>
-                                        <td><input type="number" default="0"></td>
-                                        <td>Services</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Printer</td>
-                                        <td><input type="number" default="0"></td>
-                                        <td><input type="number" default="0"></td>
-                                        <td>Services</td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </td>
-                        </tr>
-                        <!--Network Node Category-->
-                        <tr class="toggleTableCategory" onclick="toggleTable(this)">
-                            <td class="xiNodeCategory">Network</td>
-                        </tr>
-                        <tr class="sub-table">
-                            <td colspan="3">
-                                <table>
-                                    <thead>
-                                    <tr>
-                                        <th></th>
-                                        <th>Number of Nodes</th>
-                                        <th>Services per Node</th>
-                                        <th>Total Serverices of Node Type</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr>
-                                        <td>24-Port Switch</td>
-                                        <td><input type="number" default="0" min="0" step="1"></td>
-                                        <td><input type="number" default="0" min="0" step="1"></td>
-                                        <td>Services</td>
-                                    </tr>
-                                    <tr>
-                                        <td>48-Port Switch</td>
-                                        <td><input type="number" default="0" min="0" step="1"></td>
-                                        <td><input type="number" default="0" min="0" step="1"></td>
-                                        <td>Services</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Firewall</td>
-                                        <td><input type="number" default="0" min="0" step="1"></td>
-                                        <td><input type="number" default="0" min="0" step="1"></td>
-                                        <td>Services</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Router</td>
-                                        <td><input type="number" default="0" min="0" step="1"></td>
-                                        <td><input type="number" default="0" min="0" step="1"></td>
-                                        <td>Services</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Access Point</td>
-                                        <td><input type="number" default="0" min="0" step="1"></td>
-                                        <td><input type="number" default="0" min="0" step="1"></td>
-                                        <td>Services</td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </td>
-                        </tr>
-                        <!--Other Node Category-->
-                        <tr class="toggleTableCategory" onclick="toggleTable(this)">
-                            <td class="xiNodeCategory">Other</td>
-                        </tr>
-                        <tr class="sub-table">
-                            <td colspan="3">
-                                <table>
-                                    <thead>
-                                    <tr>
-                                        <th></th>
-                                        <th>Number of Nodes</th>
-                                        <th>Services per Node</th>
-                                        <th>Total Serverices of Node Type</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr>
-                                        <td>Temp Sensor</td>
-                                        <td><input type="number" default="0" min="0" step="1"></td>
-                                        <td><input type="number" default="0" min="0" step="1"></td>
-                                        <td>Services</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Light Sensor</td>
-                                        <td><input type="number" default="0" min="0" step="1"></td>
-                                        <td><input type="number" default="0" min="0" step="1"></td>
-                                        <td>Services</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Humidity Sensor</td>
-                                        <td><input type="number" default="0" min="0" step="1"></td>
-                                        <td><input type="number" default="0" min="0" step="1"></td>
-                                        <td>Services</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Other Node</td>
-                                        <td><input type="number" default="0" min="0" step="1"></td>
-                                        <td><input type="number" default="0" min="0" step="1"></td>
-                                        <td>Services</td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+          <table id="nodeTable">
+              <thead id="nodeTableHead">
+                <tr id="nodeTableHeadRow">
+                    <th>Common Node Types</th>
+                    <th>Number of Nodes</th>
+                    <th>Services per Node</th>
+                    <th>Total Serverices of Node Type</th>
+                </tr>
+              </thead>
+              <tbody id="nodeTableBody">
+                <tr id="linuxServerRow">
+                    <td id="linuxServerType">Linux Servers</td>
+                    <td id="linuxServerHost"><input id="num01" type="number" default="0" min="0"></td>
+                    <td id="linuxServerService"><input id="num02" type="number" default="0" min="0"></td>
+                    <td id="linuxServerServiceTotal"><p id="resultLinuxServer"></p></td>
+                </tr>
+                <tr id="windowsServerRow">
+                    <td id="windowsServerType">Windows Servers</td>
+                    <td id="windowsServerHost"><input id="num03" type="number" default="0" min="0"></td>
+                    <td id="windowsServerService"><input id="num04" type="number" default="0" min="0"></td>
+                    <td id="windowsServerServiceTotal"><p id="resultWindowsServer"></p></td>
+                </tr>
+                <tr id="databaseRow">
+                    <td id="databaseType">Databases</td>
+                    <td id="databaseHost"><input id="num05" type="number" default="0" min="0"></td>
+                    <td id="databaseService"><input id="num06" type="number" default="0" min="0"></td>
+                    <td id="databaseServiceTotal"><p id="resultdatabase"></p></td>
+                </tr>
+                <tr id="workstationRow">
+                    <td id="workstationType">Workstations</td>
+                    <td id="workstationHost"><input id="num07" type="number" default="0" min="0"></td>
+                    <td id="workstationService"><input id="num08" type="number" default="0" min="0"></td>
+                    <td id="workstationServiceTotal"><p id="resultWorkstation"></p></td>
+                </tr>
+                <tr id="24portRow">
+                    <td id="24portType">24-Port Switches</td>
+                    <td id="24portHost"><input id="num09" type="number" default="0" min="0"></td>
+                    <td id="24portService"><input id="num10" type="number" default="0" min="0"></td>
+                    <td id="24portServiceTotal"><p id="result24Port"></p></td>
+                </tr>
+                <tr id="48portRow">
+                    <td id="48portType">48-Port Switches</td>
+                    <td id="48portHost"><input id="num11" type="number" default="0" min="0"></td>
+                    <td id="48portService"><input id="num12" type="number" default="0" min="0"></td>
+                    <td id="48portServiceTotal"><p id="result48Port"></p></td>
+                </tr>
+                <tr id="routerRow">
+                    <td id="routerType">Routers</td>
+                    <td id="routerHost"><input id="num13" type="number" default="0" min="0"></td>
+                    <td id="routerService"><input id="num14" type="number" default="0" min="0"></td>
+                    <td id="routerServiceTotal"><p id="resultRouter"></p></td>
+                </tr>
+                <tr id="accessPointRow">
+                    <td id="accessPointType">Access Points</td>
+                    <td id="accessPointHost"><input id="num15" type="number" default="0" min="0"></td>
+                    <td id="accessPointService"><input id="num16" type="number" default="0" min="0"></td>
+                    <td id="accessPointServiceTotal"><p id="resultLinuxServer"></p></td>
+                </tr>
+                <tr id="websiteRow">
+                    <td id="websiteType">Websites</td>
+                    <td id="websiteHost"><input id="num17" type="number" default="0" min="0"></td>
+                    <td id="websiteService"><input id="num18" type="number" default="0" min="0"></td>
+                    <td id="websiteServiceTotal"><p id="resultLinuxServer"></p></td>
+                </tr>
+                <tr id="otherRow">
+                    <td id="otherType">Other Known Devices</td>
+                    <td id="otherHost"><input id="num19" type="number" default="0" min="0"></td>
+                    <td id="otherService"><input id="num20" type="number" default="0" min="0"></td>
+                    <td id="otherServiceTotal"><p id="resultLinuxServer"></p></td>
+                </tr>
+              </tbody>
+          </table>
+          <button onclick="calculateProduct()">Calculate Product</button>
         </div>
       </div>
       <br /> <br />
       <!--Enterprise Add-on Section-->
       <form>
-        <fieldset>
-          <legend>Upgrade to Enterprise Edition?</legend>
-          <div>
-            <input type="radio" id="xiEnterpriseChosen" name="xiEnterpriseUpgrade" value="xiEnterpriseChosen" checked />
-            <label for="xiEnterpriseChosen">Upgrade</label>
-            <br />
-            <input type="radio" id="xiStandardChosen" name="xiEnterpriseUpgrade" value="xiStandardChosen" />
-            <label for="xiStandardChosen">Standard</label>
-          </div>
-        </fieldset>
-      </form>
-      <br /><br />
-      <!--Phone Support Package-->
-      <label for="phonePackage">Choose a Phone Support Package:</label>
-      <select name="phonePackage" id="phoneSupportPackage">
-        <option value="10Phone">10</option>
-        <option value="5Phone">5</option>
-        <option value="0Phone">0</option>
-      </select>
-      <br /><br /><br />
-      <!--Case Support Package-->
-      <label for="casePackage">Choose a Case Support Package:</label>
-      <select name="casePackage" id="caseSupportPackage">
-        <option value="10Cases">10</option>
-        <option value="5Cases">5</option>
-        <option value="0Cases">0</option>
-      </select>
+        <legend>Upgrade to Enterprise Edition?</legend>
+        <div>
+          <input type="radio" id="xiEnterpriseChosen" name="xiEnterpriseUpgrade" value="xiEnterpriseChosen" checked />
+          <label for="xiEnterpriseChosen">Upgrade</label>
+          <br />
+          <input type="radio" id="xiStandardChosen" name="xiEnterpriseUpgrade" value="xiStandardChosen" />
+          <label for="xiStandardChosen">Standard</label>
+        </div>
+      </form> 
     </div>
-    <br /> <br />
-    <!--Log Server Calculator-->
-    <div class="calcs" id="lsCalculator">
-        <h2>Nagios Log Server Calculator</h2>
-        
-    </div>
+    <br />
+    <!--Calc Maths-->
+    <!--<label for="num1">Enter the first number:</label>
+      <input type="number" id="num1">
+    <label for="num2">Enter the second number:</label>
+      <input type="number" id="num2">-->
   </body>
 </html>

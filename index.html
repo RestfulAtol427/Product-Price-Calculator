@@ -8,46 +8,21 @@
     <script src="index.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
-      rel="stylesheet"
-    />
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"/>
     <title>Nagios Product Beautiful Perfect Super Calculator</title>
-    <header positionn="fixed"></header>
+    <header positionn="fixed"> Nagios XI: Node Estimation</header>
   </head>
 
   <body>
-    <h1>lol Nagios Suite Product Pricing Calculator</h1>
-    <h1>Nagios Suite Product Pricing Calculator lol</h1>
-    <!--Product Checkboxes-->
-    <fieldset id="productSuiteCheckbox">
-      <legend>Choose the Nagios Suite products you would like to view:</legend>
-      <div>
-        <input type="checkbox" id="xiCheckbox" name="calculatePriceFor" value="xiCheckbox"/>
-        <label for="xiCheckbox">XI</label>
-      </div>
-      <div>
-        <input type="checkbox" id="logServerCheckbox" name="calculatePriceFor" value="logServerCheckbox"/>
-        <label for="logServerCheckbox">Log Server</label>
-      </div>
-      <div>
-        <input type="checkbox" id="networkAnalyzerCheckbox" name="calculatePriceFor" value="networkAnalyzerCheckbox"/>
-        <label for="networkAnalyzerCheckbox">Network Analyzer</label>
-      </div>
-      <div>
-        <input type="checkbox" id="fusionCheckbox" name="calculatePriceFor" value="fusionCheckbox"/>
-        <label for="fusionCheckbox">Fusion</label>
-      </div>
-    </fieldset>
-
+    <h1> Nagios XI Node Calculator</h1>
     <!--XI Calculator-->
     <div id="xiCalculator">
       <br />
       <!--Locations to Monitor-->
+      <!--
       <label for="xiLecenseQuote">Number of locations to monitor:</label>
       <input id="xiLicenseQuote" type="number" value="1" min="1" max="50" />
-      <br /><br /><br />
+      <br /><br /><br /> -->
       <!--Nodes to Monitor-->
           <table id="nodeTable">
               <thead id="nodeTableHead">
@@ -59,73 +34,89 @@
                 </tr>
               </thead>
               <tbody id="nodeTableBody">
+                <!--linux server-->
                 <tr id="linuxServerRow">
                     <td id="linuxServerType">Linux Servers</td>
-                    <td id="linuxServerHost"><input id="num01" type="number" default="0" min="0"></td>
-                    <td id="linuxServerService"><input id="num02" type="number" default="0" min="0"></td>
-                    <td id="linuxServerServiceTotal"><p id="resultLinuxServer"></p></td>
+                    <td id="linuxServerHost"><input id="num01" type="number" value="0" min="0"></td>
+                    <td id="linuxServerService"><input id="num02" type="number" value="10" min="0"></td>
+                    <td id="linuxServerServiceTotal"><span id="resultLinuxServer">Services: </span></td>
                 </tr>
+                <!--windows server-->
                 <tr id="windowsServerRow">
                     <td id="windowsServerType">Windows Servers</td>
-                    <td id="windowsServerHost"><input id="num03" type="number" default="0" min="0"></td>
-                    <td id="windowsServerService"><input id="num04" type="number" default="0" min="0"></td>
-                    <td id="windowsServerServiceTotal"><p id="resultWindowsServer"></p></td>
+                    <td id="windowsServerHost"><input id="num03" type="number" value="0" min="0"></td>
+                    <td id="windowsServerService"><input id="num04" type="number" value="10" min="0"></td>
+                    <td id="windowsServerServiceTotal"><span id="resultWindowsServer">Services: </span></td>
                 </tr>
+                <!--databases-->
                 <tr id="databaseRow">
                     <td id="databaseType">Databases</td>
-                    <td id="databaseHost"><input id="num05" type="number" default="0" min="0"></td>
-                    <td id="databaseService"><input id="num06" type="number" default="0" min="0"></td>
-                    <td id="databaseServiceTotal"><p id="resultdatabase"></p></td>
+                    <td id="databaseHost"><input id="num05" type="number" value="0" min="0"></td>
+                    <td id="databaseService"><input id="num06" type="number" value="10" min="0"></td>
+                    <td id="databaseServiceTotal"><span id="resultdatabase">Services: </span></td>
                 </tr>
+                <!--workstations-->
                 <tr id="workstationRow">
                     <td id="workstationType">Workstations</td>
-                    <td id="workstationHost"><input id="num07" type="number" default="0" min="0"></td>
-                    <td id="workstationService"><input id="num08" type="number" default="0" min="0"></td>
-                    <td id="workstationServiceTotal"><p id="resultWorkstation"></p></td>
+                    <td id="workstationHost"><input id="num07" type="number" value="0" min="0"></td>
+                    <td id="workstationService"><input id="num08" type="number" value="10" min="0"></td>
+                    <td id="workstationServiceTotal"><span id="resultWorkstation">Services: </span></td>
                 </tr>
+                <!--24-port switches-->
                 <tr id="24portRow">
                     <td id="24portType">24-Port Switches</td>
-                    <td id="24portHost"><input id="num09" type="number" default="0" min="0"></td>
-                    <td id="24portService"><input id="num10" type="number" default="0" min="0"></td>
-                    <td id="24portServiceTotal"><p id="result24Port"></p></td>
+                    <td id="24portHost"><input id="num09" type="number" value="0" min="0"></td>
+                    <td id="24portService"><input id="num10" type="number" value="10" min="0"></td>
+                    <td id="24portServiceTotal"><span id="result24Port">Services: </span></td>
                 </tr>
+                <!--48-port switches-->
                 <tr id="48portRow">
                     <td id="48portType">48-Port Switches</td>
-                    <td id="48portHost"><input id="num11" type="number" default="0" min="0"></td>
-                    <td id="48portService"><input id="num12" type="number" default="0" min="0"></td>
-                    <td id="48portServiceTotal"><p id="result48Port"></p></td>
+                    <td id="48portHost"><input id="num11" type="number" value="0" min="0"></td>
+                    <td id="48portService"><input id="num12" type="number" value="10" min="0"></td>
+                    <td id="48portServiceTotal"><span id="result48Port">Services: </span></td>
                 </tr>
+                <!--routers-->
                 <tr id="routerRow">
                     <td id="routerType">Routers</td>
-                    <td id="routerHost"><input id="num13" type="number" default="0" min="0"></td>
-                    <td id="routerService"><input id="num14" type="number" default="0" min="0"></td>
-                    <td id="routerServiceTotal"><p id="resultRouter"></p></td>
+                    <td id="routerHost"><input id="num13" type="number" value="0" min="0"></td>
+                    <td id="routerService"><input id="num14" type="number" value="10" min="0"></td>
+                    <td id="routerServiceTotal"><span id="resultRouter">Services: </span></td>
                 </tr>
+                <!--access points-->
                 <tr id="accessPointRow">
                     <td id="accessPointType">Access Points</td>
-                    <td id="accessPointHost"><input id="num15" type="number" default="0" min="0"></td>
-                    <td id="accessPointService"><input id="num16" type="number" default="0" min="0"></td>
-                    <td id="accessPointServiceTotal"><p id="resultLinuxServer"></p></td>
+                    <td id="accessPointHost"><input id="num15" type="number" value="0" min="0"></td>
+                    <td id="accessPointService"><input id="num16" type="number" value="10" min="0"></td>
+                    <td id="accessPointServiceTotal"><span id="resultAccessPoint">Services: </span></td>
                 </tr>
+                <!--websites-->
                 <tr id="websiteRow">
                     <td id="websiteType">Websites</td>
-                    <td id="websiteHost"><input id="num17" type="number" default="0" min="0"></td>
-                    <td id="websiteService"><input id="num18" type="number" default="0" min="0"></td>
-                    <td id="websiteServiceTotal"><p id="resultLinuxServer"></p></td>
+                    <td id="websiteHost"><input id="num17" type="number" value="0" min="0"></td>
+                    <td id="websiteService"><input id="num18" type="number" value="10" min="0"></td>
+                    <td id="websiteServiceTotal"><span id="resultWebsite">Services: </span></td>
                 </tr>
+                <!--others-->
                 <tr id="otherRow">
-                    <td id="otherType">Other Known Devices</td>
-                    <td id="otherHost"><input id="num19" type="number" default="0" min="0"></td>
-                    <td id="otherService"><input id="num20" type="number" default="0" min="0"></td>
-                    <td id="otherServiceTotal"><p id="resultLinuxServer"></p></td>
+                    <td id="otherType">Other Devices</td>
+                    <td id="otherHost"><input id="num19" type="number" value="0" min="0"></td>
+                    <td id="otherService"><input id="num20" type="number" value="10" min="0"></td>
+                    <td id="otherServiceTotal"><span id="resultOther">Services: </span></td>
                 </tr>
               </tbody>
           </table>
+          <!--Calculate on click - button-->
           <button onclick="calculateProduct()">Calculate Product</button>
+          <!--total services output-->
+          <div>
+            <p>Total Services to Monitor: <span id="totalServicesResult"></span></p>
+          </div>
         </div>
       </div>
       <br /> <br />
       <!--Enterprise Add-on Section-->
+      <!--
       <form>
         <legend>Upgrade to Enterprise Edition?</legend>
         <div>
@@ -135,13 +126,7 @@
           <input type="radio" id="xiStandardChosen" name="xiEnterpriseUpgrade" value="xiStandardChosen" />
           <label for="xiStandardChosen">Standard</label>
         </div>
-      </form> 
+      </form> -->
     </div>
-    <br />
-    <!--Calc Maths-->
-    <!--<label for="num1">Enter the first number:</label>
-      <input type="number" id="num1">
-    <label for="num2">Enter the second number:</label>
-      <input type="number" id="num2">-->
   </body>
 </html>

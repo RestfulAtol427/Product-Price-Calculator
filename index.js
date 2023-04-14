@@ -42,8 +42,10 @@ function calculateProduct() {
   var num20 = parseInt(document.getElementById('num20').value);
   var otherProduct = num19 * num20;
   //total calc
+
   var totalServices = linuxServerProduct + windowsServerProduct + databaseProduct + workstationProduct + port24Product + port48Product + routerProduct + accessPointProduct + websiteProduct + otherProduct;
   var totalNodes = num01 + num03 + num05+ num07 + num09 + num11 + num13 + num15 + num17 + num19;
+
 
   //All Node Results
   document.getElementById('resultLinuxServer').textContent = `Services: ${linuxServerProduct}`;

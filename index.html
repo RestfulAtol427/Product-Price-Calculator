@@ -9,26 +9,22 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"/>
-    <title>Nagios Product Beautiful Perfect Super Calculator</title>
-    <header positionn="fixed"> Nagios XI: Node Estimation</header>
+    <title>Nagios XI Node Calculator</title>
+   <!-- <header positionn="fixed"> Nagios XI: Node Estimation</header> -->
   </head>
 
   <body>
-    <!--Div holding both cards-->
-    <div>
-      <!--Div for first card-->
-      <div>
-      <h1> Nagios XI Node Calculator</h1>
-        <!--XI Calculator-->
-        <div id="xiCalculator">
+	<div id="card-box">
+		<div id="input-card">
+    <h1> Nagios XI Node Calculator</h1>
+    <!--XI Calculator-->
+     <div id="xiCalculator">
           <br />
           <!--Locations to Monitor-->
-          
           <label for="xiLecenseQuote">Number of locations to monitor:</label>
           <input id="xiLicenseQuote" type="number" value="1" min="1" max="50" />
           <br /><br /><br />
           <!--Nodes to Monitor-->
-          <div id="">
             <table id="nodeTable">
                 <thead id="nodeTableHead">
                   <tr id="nodeTableHeadRow">
@@ -43,7 +39,7 @@
                   <!--linux server-->
                   <tr id="linuxServerRow">
                       <td id="linuxServerType">Linux Servers</td>
-                      <td class="tooltip"><img src="Media/Images/help.png"><span class="tooltiptext">Linux Servers tips</span></td>
+                      <td class="tooltip"><img src="Media/Images/help.png" alt="more info"><span class="tooltiptext">Linux Servers tips</span></td>
                       <td id="linuxServerHost"><input id="num01" type="number" value="0" min="0"></td>
                       <td id="linuxServerService"><input id="num02" type="number" value="8" min="0"></td>
                       <td id="linuxServerServiceTotal"><span id="resultLinuxServer">Services: </span></td>
@@ -51,7 +47,7 @@
                   <!--windows server-->
                   <tr id="windowsServerRow">
                       <td id="windowsServerType">Windows Servers</td>
-                      <td class="tooltip"><img src="Media/Images/help.png"><span class="tooltiptext">Windows Servers tips</span></td>
+                      <td class="tooltip"><img src="Media/Images/help.png" alt="more info"><span class="tooltiptext">Windows Servers tips</span></td>
                       <td id="windowsServerHost"><input id="num03" type="number" value="0" min="0"></td>
                       <td id="windowsServerService"><input id="num04" type="number" value="8" min="0"></td>
                       <td id="windowsServerServiceTotal"><span id="resultWindowsServer">Services: </span></td>
@@ -59,7 +55,7 @@
                   <!--databases-->
                   <tr id="databaseRow">
                       <td id="databaseType">Databases</td>
-                      <td class="tooltip"><img src="Media/Images/help.png"><span class="tooltiptext">Databases tips</span></td>
+                      <td class="tooltip"><img src="Media/Images/help.png" alt="more info"><span class="tooltiptext">Databases tips</span></td>
                       <td id="databaseHost"><input id="num05" type="number" value="0" min="0"></td>
                       <td id="databaseService"><input id="num06" type="number" value="8" min="0"></td>
                       <td id="databaseServiceTotal"><span id="resultdatabase">Services: </span></td>
@@ -67,7 +63,7 @@
                   <!--workstations-->
                   <tr id="workstationRow">
                       <td id="workstationType">Workstations</td>
-                      <td class="tooltip"><img src="Media/Images/help.png"><span class="tooltiptext">Workstations tips</span></td>
+                      <td class="tooltip"><img src="Media/Images/help.png" alt="more info"><span class="tooltiptext">Workstations tips</span></td>
                       <td id="workstationHost"><input id="num07" type="number" value="0" min="0"></td>
                       <td id="workstationService"><input id="num08" type="number" value="8" min="0"></td>
                       <td id="workstationServiceTotal"><span id="resultWorkstation">Services: </span></td>
@@ -75,7 +71,7 @@
                   <!--24-port switches-->
                   <tr id="24portRow">
                       <td id="24portType">24-Port Switches</td>
-                      <td class="tooltip"><img src="Media/Images/help.png"><span class="tooltiptext">24-Port Switches tips</span></td>
+                      <td class="tooltip"><img src="Media/Images/help.png" alt="more info"><span class="tooltiptext">24-Port Switches tips</span></td>
                       <td id="24portHost"><input id="num09" type="number" value="0" min="0"></td>
                       <td id="24portService"><input id="num10" type="number" value="75" min="0"></td>
                       <td id="24portServiceTotal"><span id="result24Port">Services: </span></td>
@@ -83,7 +79,7 @@
                   <!--48-port switches-->
                   <tr id="48portRow">
                       <td id="48portType">48-Port Switches</td>
-                      <td class="tooltip"><img src="Media/Images/help.png"><span class="tooltiptext">48-Port Switches tips</span></td>
+                      <td class="tooltip"><img src="Media/Images/help.png" alt="more info"><span class="tooltiptext">48-Port Switches tips</span></td>
                       <td id="48portHost"><input id="num11" type="number" value="0" min="0"></td>
                       <td id="48portService"><input id="num12" type="number" value="150" min="0"></td>
                       <td id="48portServiceTotal"><span id="result48Port">Services: </span></td>
@@ -91,7 +87,7 @@
                   <!--routers-->
                   <tr id="routerRow">
                       <td id="routerType">Routers</td>
-                      <td class="tooltip"><img src="Media/Images/help.png"><span class="tooltiptext">Routers tips</span></td>
+                      <td class="tooltip"><img src="Media/Images/help.png" alt="more info"><span class="tooltiptext">Routers tips</span></td>
                       <td id="routerHost"><input id="num13" type="number" value="0" min="0"></td>
                       <td id="routerService"><input id="num14" type="number" value="8" min="0"></td>
                       <td id="routerServiceTotal"><span id="resultRouter">Services: </span></td>
@@ -99,7 +95,7 @@
                   <!--access points-->
                   <tr id="accessPointRow">
                       <td id="accessPointType">Access Points</td>
-                      <td class="tooltip"><img src="Media/Images/help.png"><span class="tooltiptext">Access Points tips</span></td>
+                      <td class="tooltip"><img src="Media/Images/help.png" alt="more info"><span class="tooltiptext">Access Points tips</span></td>
                       <td id="accessPointHost"><input id="num15" type="number" value="0" min="0"></td>
                       <td id="accessPointService"><input id="num16" type="number" value="8" min="0"></td>
                       <td id="accessPointServiceTotal"><span id="resultAccessPoint">Services: </span></td>
@@ -107,7 +103,7 @@
                   <!--websites-->
                   <tr id="websiteRow">
                       <td id="websiteType">Websites</td>
-                      <td class="tooltip"><img src="Media/Images/help.png"><span class="tooltiptext">Website Tips</span></td>
+                      <td class="tooltip"><img src="Media/Images/help.png" alt="more info"><span class="tooltiptext">Website Tips</span></td>
                       <td id="websiteHost"><input id="num17" type="number" value="0" min="0"></td>
                       <td id="websiteService"><input id="num18" type="number" value="8" min="0"></td>
                       <td id="websiteServiceTotal"><span id="resultWebsite">Services: </span></td>
@@ -115,7 +111,7 @@
                   <!--others-->
                   <tr id="otherRow">
                       <td id="otherType">Other Devices</td>
-                      <td class="tooltip"><img src="Media/Images/help.png"><span class="tooltiptext">Other Device tips</span></td>
+                      <td class="tooltip"><img src="Media/Images/help.png" alt="more info"><span class="tooltiptext">Other Device tips</span></td>
                       <td id="otherHost"><input id="num19" type="number" value="0" min="0"></td>
                       <td id="otherService"><input id="num20" type="number" value="8" min="0"></td>
                       <td id="otherServiceTotal"><span id="resultOther">Services: </span></td>
@@ -129,35 +125,40 @@
               <p>Total Services to Monitor: <span id="totalServicesResult"></span><br>Total Nodes required: <span id="totalNodesResult"></span></p>
             </div>
           </div>
-        </div>
         <br /> <br />
-        <!--Enterprise Add-on Section-->
-        <form>
+      <!--Enterprise Add-on Section-->
+   
+     <form>
           <legend>Upgrade to Enterprise Edition?</legend>
-          <div id="enterpriseRadioSelect">
-            <input type="radio" class="radioButton" id="xiEnterpriseChosen" name="xiEnterpriseUpgrade" value="Enterprise" checked />
+          <div>
+            <input type="radio" class="radioButton" id="xiEnterpriseChosen" name="xiEnterpriseUpgrade" value="xiEnterpriseChosen" checked />
             <label for="xiEnterpriseChosen">Upgrade</label>
             <br />
-            <input type="radio" class="radioButton" id="xiStandardChosen" name="xiEnterpriseUpgrade" value="Standard" />
+            <input type="radio" class="radioButton" id="xiStandardChosen" name="xiEnterpriseUpgrade" value="xiStandardChosen" />
             <label for="xiStandardChosen">Standard</label>
           </div>
         </form>
-      </div>
-      <!--Second Card-->
-      <div>
+		
+		
+		
+		</div> <!--end input-card -->
+		<div id= "output-card">
+
         <h2>Recommended License Level</h2>
-        <div>
-          <p>Based on inputs, the recommended license level is: <span></span> Node <span id="enterprisePlan"></span> License</p>
-          <br />
-          <div>
-            <a href="https://www.nagios.com/products/nagios-xi/buy/" target="_blank">Buy XI now</a>
-            <br />
-            <a href="https://www.nagios.com/contact/" target="_blank">Contact Nagios</a>
-            <br />
-            <a href="https://www.nagios.com/downloads/nagios-xi/" target="_blank">30 Day Free Trial</a>
-          </div>
-        </div>
-      </div>
-    </div>
+			<p>Based on inputs, the recommended license level is: <span></span> license</p>
+			
+          <div id="link-buttons"> 
+          		<a class="button" href="https://www.nagios.com/products/nagios-xi/buy/" target="_blank">
+					Buy XI now
+			  	</a>
+          		<a class="button" href="https://www.nagios.com/contact/" target="_blank">
+					Contact Nagios
+			  	</a>
+           		<a class="button" href="https://www.nagios.com/downloads/nagios-xi/" target="_blank">
+					30 Day Free Trial
+			  	</a>
+			</div> <!--end link buttons-->
+		 </div> <!--end output card-->
+	  </div> <!--end card-box-->
   </body>
-</html>
+</html><!--test-->

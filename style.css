@@ -44,11 +44,6 @@ button:hover {
 
 /*ID below*/
 
-input.radioButton {
-  cursor: pointer;
-}
-
-
 img {
   height: 20px;
   width: 20px;
@@ -91,6 +86,13 @@ img {
 	width: 40%;
 	min-height: 30em;
 }
+
+/* ID-Class combos */
+
+input.radioButton {
+  cursor: pointer;
+}
+
 
 #link-buttons,.button{
 	justify-content: space-evenly;

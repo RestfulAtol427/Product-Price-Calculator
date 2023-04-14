@@ -2,5 +2,52 @@
 head, body, footer {
   font-family: 'Roboto', sans-serif;
   display: inline-block;
+  cursor: default;
 }
 
+
+button {
+  cursor: pointer;
+}
+
+
+input.radioButton {
+  cursor: pointer;
+}
+
+
+img {
+  height: 20px;
+  width: 20px;
+}
+
+
+/* Hints */
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 200px;
+  background-color: rgba(0, 0, 0, 0.726);
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  /*Position the hover of the tooltip text*/
+  position: absolute;
+  z-index: 5;
+  margin-top: -60px;
+  margin-left: -100px; /* Use half of the width (120/2 = 60), to center the tooltip */
+}
+
+
+/* Show the tooltip on hover */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  transition: ease-in;
+}

@@ -1,15 +1,19 @@
 /*font-family: 'Roboto', sans-serif;*/
+
 head, body, footer {
   font-family: 'Roboto', sans-serif;
   display: inline-block;
+
 width: 100%;
 }
+
 
 html{
 	background-image:url("Space Backgrounds/space 3.svg");
 	background-repeat:no-repeat;
 	background-size: cover;
 }
+
 
 button {
 	border: 2px #4D89F9;
@@ -25,6 +29,7 @@ button {
 	margin: 1em auto;
 }
 
+
 button:hover {
 	border: 2px solid #4D89F9;
 	border-radius: 5px;
@@ -36,11 +41,13 @@ button:hover {
 	transform: scale(1.1);
 }
 
+
 /*ID below*/
 
 input.radioButton {
   cursor: pointer;
 }
+
 
 img {
   height: 20px;
@@ -56,6 +63,7 @@ img {
 	min-height: 30em;
 }
 
+
 #input-card{
 	display:block;
 	background-color: #FFFFFF;
@@ -67,9 +75,11 @@ img {
 	min-height: 30em;
 }
 
+
 #xiCalculator{
 	
 }
+
 
 #output-card{
 	display: block;
@@ -88,7 +98,9 @@ img {
 	display: inline;
 }
 
+
 /* classes below */
+
 .button {
 	border: 2px #4D89F9;
 	border-radius: 5px;
@@ -103,6 +115,7 @@ img {
 	margin: 1em auto;
 }
 
+
 .button:hover {
 	border: 2px solid #4D89F9;
 	border-radius: 5px;
@@ -115,7 +128,9 @@ img {
 	text-decoration: none;
 }
 
+
 /* Hints */
+
 .tooltip {
   position: relative;
   display: inline-block;
@@ -123,6 +138,7 @@ img {
 
 
 /* Tooltip text */
+
 .tooltip .tooltiptext {
   visibility: hidden;
   width: 200px;
@@ -140,7 +156,9 @@ img {
 
 
 /* Show the tooltip on hover */
+
 .tooltip:hover .tooltiptext {
   visibility: visible;
   transition: ease-in;
+
 }

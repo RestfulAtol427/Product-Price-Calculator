@@ -1,35 +1,6 @@
 //Start of Calculation Function
 
 //Linux Server Constants
-const num01 = parseInt();
-const num02 = parseInt();
-//Windows Server Constants
-const num03 = parseInt();
-const num04 = parseInt();
-//Database Constants
-const num05 = parseInt();
-const num06 = parseInt();
-//Workstation Constants
-const num07 = parseInt();
-const num08 = parseInt();
-//24-Port Switch Constants
-const num09 = parseInt();
-const num10 = parseInt();
-//48-Port Switch Constants
-const num11 = parseInt();
-const num12 = parseInt();
-//Router Constants
-const num13 = parseInt();
-const num14 = parseInt();
-//Access Point Constants
-const num15 = parseInt();
-const num16 = parseInt();
-//Website Constants
-const num17 = parseInt();
-const num18 = parseInt();
-//Other Constants
-const num19 = parseInt();
-const num20 = parseInt();
 
 function calculateProduct() {
   //linux server calcs
@@ -92,35 +63,3 @@ function calculateProduct() {
   document.getElementById('totalNodesResult').textContent = `${totalNodes}`;
 }
 
-
-//Variables for 'Enter' key functionality
-var inputField = document.getElementById("input-field");
-var myButton = document.getElementById("calcButton");
-//Upon hitting 'Enter' key, calculate button triggers 'click' event
-inputField.addEventListener("keyup", function(event) {
-  if (event.KeyboardEvent.key === 13) { // 13 is the "Enter" key code
-    event.preventDefault(); // Cancel the default action, if needed
-    myButton.click(); // Trigger the button element with a click
-  }
-});
-
-//Working on making an auto-updating section for lincense recommendation.
-let total = 0;
-const fruitInput = document.getElementById('fruit');
-const submitButton = document.getElementById('submit');
-const totalDisplay = document.getElementById('total-fruit');
-
-submitButton.addEventListener('click', () => {
-  const fruit = fruitInput.value;
-  total++;
-  totalDisplay.textContent = total + " " + fruit + "s";
-  fruitInput.value = '';
-});
-
-
-//Code working on changing values of 0 to light gray font color
-/*const value = parseInt(number.textContent);
-if (value === 0) {
-  Number.style.color = "#d9d9d6";
-}
-*/

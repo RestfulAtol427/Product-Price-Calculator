@@ -84,8 +84,8 @@ img {
 
 #link-buttons,.button{
 	justify-content: space-evenly;
-	margin: 0.5em 0.5em 0.5em 0.5em;
-	display:inline;
+	margin: 0.5em!important; /* Button row breaks/condenses without the important tag */
+	display: inline;
 }
 
 /* classes below */

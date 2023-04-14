@@ -74,6 +74,7 @@ function calculateProduct() {
   const otherProduct = num19 * num20;
   //total calc
   const totalServices = linuxServerProduct + windowsServerProduct + databaseProduct + workstationProduct + port24Product + port48Product + routerProduct + accessPointProduct + websiteProduct + otherProduct;
+  const totalNodes = num01 + num03 + num05+ num07 + num09 + num11 + num13 + num15 + num17 + num19;
 
   //All Node Results
   document.getElementById('resultLinuxServer').textContent = `Services: ${linuxServerProduct}`;
@@ -88,12 +89,37 @@ function calculateProduct() {
   document.getElementById('resultOther').textContent = `Services: ${otherProduct}`;
   //total results
   document.getElementById('totalServicesResult').textContent = `${totalServices}`;
+  document.getElementById('totalNodesResult').textContent = `${totalNodes}`;
 }
+
+
+//Variables for 'Enter' key functionality
+var inputField = document.getElementById("input-field");
+var myButton = document.getElementById("calcButton");
+//Upon hitting 'Enter' key, calculate button triggers 'click' event
+inputField.addEventListener("keyup", function(event) {
+  if (event.KeyboardEvent.key === 13) { // 13 is the "Enter" key code
+    event.preventDefault(); // Cancel the default action, if needed
+    myButton.click(); // Trigger the button element with a click
+  }
+});
+
+//Working on making an auto-updating section for lincense recommendation.
+let total = 0;
+const fruitInput = document.getElementById('fruit');
+const submitButton = document.getElementById('submit');
+const totalDisplay = document.getElementById('total-fruit');
+
+submitButton.addEventListener('click', () => {
+  const fruit = fruitInput.value;
+  total++;
+  totalDisplay.textContent = total + " " + fruit + "s";
+  fruitInput.value = '';
+});
 
 
 //Code working on changing values of 0 to light gray font color
 /*const value = parseInt(number.textContent);
-
 if (value === 0) {
   Number.style.color = "#d9d9d6";
 }

@@ -9,21 +9,24 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"/>
-    <title>Nagios Product Beautiful Perfect Super Calculator</title>
-    <header positionn="fixed"> Nagios XI: Node Estimation</header>
+    <title>Nagios XI Node Calculator</title>
+   <!-- <header positionn="fixed"> Nagios XI: Node Estimation</header> -->
   </head>
 
   <body>
+	<div id="card-box">
+		<div id="input-card">
     <h1> Nagios XI Node Calculator</h1>
     <!--XI Calculator-->
     <div id="xiCalculator">
       <br />
       <!--Locations to Monitor-->
-      <!--
+
       <label for="xiLecenseQuote">Number of locations to monitor:</label>
       <input id="xiLicenseQuote" type="number" value="1" min="1" max="50" />
-      <br /><br /><br /> -->
+      <br /><br /><br /> 
       <!--Nodes to Monitor-->
+		<div>
           <table id="nodeTable">
               <thead id="nodeTableHead">
                 <tr id="nodeTableHeadRow">
@@ -110,23 +113,44 @@
           <button onclick="calculateProduct()">Calculate Product</button>
           <!--total services output-->
           <div>
-            <p>Total Services to Monitor: <span id="totalServicesResult"></span></p>
+            <p>Total Services to Monitor: <span id="totalServicesResult"></span><br>Total Nodes required: <span id="totalNodesResult"></span></p>
           </div>
         </div>
       </div>
       <br /> <br />
       <!--Enterprise Add-on Section-->
-      <!--
-      <form>
-        <legend>Upgrade to Enterprise Edition?</legend>
-        <div>
-          <input type="radio" id="xiEnterpriseChosen" name="xiEnterpriseUpgrade" value="xiEnterpriseChosen" checked />
-          <label for="xiEnterpriseChosen">Upgrade</label>
-          <br />
-          <input type="radio" id="xiStandardChosen" name="xiEnterpriseUpgrade" value="xiStandardChosen" />
-          <label for="xiStandardChosen">Standard</label>
-        </div>
-      </form> -->
-    </div>
+   
+     <form>
+          <legend>Upgrade to Enterprise Edition?</legend>
+          <div>
+            <input type="radio" class="radioButton" id="xiEnterpriseChosen" name="xiEnterpriseUpgrade" value="xiEnterpriseChosen" checked />
+            <label for="xiEnterpriseChosen">Upgrade</label>
+            <br />
+            <input type="radio" class="radioButton" id="xiStandardChosen" name="xiEnterpriseUpgrade" value="xiStandardChosen" />
+            <label for="xiStandardChosen">Standard</label>
+          </div>
+        </form>
+		
+		
+		
+		</div> <!--end input-card -->
+		<div id= "output-card">
+
+        <h2>Recommended License Level</h2>
+			<p>Based on inputs, the recommended license level is: <span></span> license</p>
+			
+          <div id="link-buttons"> 
+          		<a class="button" href="https://www.nagios.com/products/nagios-xi/buy/" target="_blank">
+					Buy XI now
+			  	</a>
+          		<a class="button" href="https://www.nagios.com/contact/" target="_blank">
+					Contact Nagios
+			  	</a>
+           		<a class="button" href="https://www.nagios.com/downloads/nagios-xi/" target="_blank">
+					30 Day Free Trial
+			  	</a>
+			</div> <!--end link buttons-->
+		 </div> <!--end output card-->
+	  </div> <!--end card-box-->
   </body>
 </html>

@@ -127,7 +127,7 @@
 			
 			<form>
 				<legend>Upgrade to Enterprise Edition?</legend>
-				<div>
+				<div id="enterpriseRadioSelect">
 					<input type="radio" class="radioButton" id="xiEnterpriseChosen" name="xiEnterpriseUpgrade" value="xiEnterpriseChosen" checked />
 					<label for="xiEnterpriseChosen">
 						Upgrade
@@ -143,7 +143,10 @@
 		<div id= "output-card">
 
 			<h2>Recommended License Level</h2>
-			<p>Based on inputs, the recommended license level is: <span id="nodeRecommend"></span> Node <span id="enterprisePlan"></span> license</p>
+			<p>Based on inputs, the recommended license level is:
+				<br />
+				<span id="nodeRecommend"></span> at <span id="enterprisePlan"></span> level.
+			</p>
 
 			<div id="link-buttons"> 
 				<a class="button" href="https://www.nagios.com/products/nagios-xi/buy/" target="_blank">

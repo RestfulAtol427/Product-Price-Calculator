@@ -93,6 +93,8 @@ function calculateProduct() {
 }
 
 
+
+
 //Dynamic ID assingment for inputs
 /*
 function assignInputIDs(containerId) {
@@ -109,3 +111,4 @@ function assignInputIDs(containerId) {
   }
 }
 */
+

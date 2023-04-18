@@ -125,6 +125,9 @@
 				<label for="enterpriseChosen">Upgrade</label>
 				<input type="radio" id="standardChosen" name="enterpriseUpgrade" value="standardChosen" />
 				<label for="standardChosen">Standard</label>
+
+
+
 			</div>
 
 			<!--Calculate on click - button-->
@@ -139,12 +142,14 @@
 				<span id="enterprisePlan">Choose license level</span> / 
 				<span id="nodeRecommend">input nodes</span>
 			</h3>
+
 			<!--total services output-->
 			<div>
 				<p>Total Services to Monitor: <span id="totalServicesResult"></span>
 					<br>
 					Total Nodes required: <span id="totalNodesResult"></span></p>
 			</div>
+
 			<div id="link-buttons"> 
 				<a class="button" href="https://www.nagios.com/products/nagios-xi/buy/" target="_blank">
 					Buy XI now
@@ -166,6 +171,7 @@
 		/* assignInputIDs('input-card'); */
 
 		function updateText() { //For Auto Updateding the Enterprise Plan output
+
 			const enterpriseChosen = document.getElementById('enterpriseChosen');
 			const standardChosen = document.getElementById('standardChosen');
 			const enterpriseSpan = document.getElementById('enterprisePlan');

@@ -2,49 +2,49 @@
 
 function calculateProduct() {
   //linux server calcs
-  var num01 = parseInt(document.getElementById('num01').value);
-  var num02 = parseInt(document.getElementById('num02').value);
-  var linuxServerProduct = num01 * num02;
+  var n01 = parseInt(document.getElementById('n01').value);
+  var s01 = parseInt(document.getElementById('s01').value);
+  var linuxServerProduct = n01 * s01;
   //windows server calcs
-  var num03 = parseInt(document.getElementById('num03').value);
-  var num04 = parseInt(document.getElementById('num04').value);
-  var windowsServerProduct = num03 * num04;
+  var n02 = parseInt(document.getElementById('n02').value);
+  var s02 = parseInt(document.getElementById('s02').value);
+  var windowsServerProduct = n02 * s02;
   //database calcs
-  var num05 = parseInt(document.getElementById('num05').value);
-  var num06 = parseInt(document.getElementById('num06').value);
-  var databaseProduct = num05 * num06;
+  var n03 = parseInt(document.getElementById('n03').value);
+  var s03 = parseInt(document.getElementById('s03').value);
+  var databaseProduct = n03 * s03;
   //workstation calcs
-  var num07 = parseInt(document.getElementById('num07').value);
-  var num08 = parseInt(document.getElementById('num08').value);
-  var workstationProduct = num07 * num08;
+  var n04 = parseInt(document.getElementById('n04').value);
+  var s04 = parseInt(document.getElementById('s04').value);
+  var workstationProduct = n04 * s04;
   //24-port switch calcs
-  var num09 = parseInt(document.getElementById('num09').value);
-  var num10 = parseInt(document.getElementById('num10').value);
-  var port24Product = num09 * num10;
+  var n05 = parseInt(document.getElementById('n05').value);
+  var s05 = parseInt(document.getElementById('s05').value);
+  var port24Product = n05 * s05;
   //48-port switch calcs
-  var num11 = parseInt(document.getElementById('num11').value);
-  var num12 = parseInt(document.getElementById('num12').value);
-  var port48Product = num11 * num12;
+  var n06 = parseInt(document.getElementById('n06').value);
+  var s06 = parseInt(document.getElementById('s06').value);
+  var port48Product = n06 * s06;
   //router calcs
-  var num13 = parseInt(document.getElementById('num13').value);
-  var num14 = parseInt(document.getElementById('num14').value);
-  var routerProduct = num13 * num14;
+  var n07 = parseInt(document.getElementById('n07').value);
+  var s07 = parseInt(document.getElementById('s07').value);
+  var routerProduct = n07 * s07;
   //access point calcs
-  var num15 = parseInt(document.getElementById('num15').value);
-  var num16 = parseInt(document.getElementById('num16').value);
-  var accessPointProduct = num15 * num16;
+  var n08 = parseInt(document.getElementById('n08').value);
+  var s08 = parseInt(document.getElementById('s08').value);
+  var accessPointProduct = n08 * s08;
   //website calcs
-  var num17 = parseInt(document.getElementById('num17').value);
-  var num18 = parseInt(document.getElementById('num18').value);
-  var websiteProduct = num17 * num18;
+  var n09 = parseInt(document.getElementById('n09').value);
+  var s09 = parseInt(document.getElementById('s09').value);
+  var websiteProduct = n09 * s09;
   //other calcs
-  var num19 = parseInt(document.getElementById('num19').value);
-  var num20 = parseInt(document.getElementById('num20').value);
-  var otherProduct = num19 * num20;
+  var n10 = parseInt(document.getElementById('n10').value);
+  var s10 = parseInt(document.getElementById('s10').value);
+  var otherProduct = n10 * s10;
   //total calc
 
   var totalServices = linuxServerProduct + windowsServerProduct + databaseProduct + workstationProduct + port24Product + port48Product + routerProduct + accessPointProduct + websiteProduct + otherProduct;
-  var totalNodes = num01 + num03 + num05+ num07 + num09 + num11 + num13 + num15 + num17 + num19;
+  var totalNodes = n01 + n02 + n03+ n04 + n05 + n06 + n07 + n08 + n09 + n10;
 
   
 
@@ -70,6 +70,8 @@ function calculateProduct() {
 
   if (totalNodes >= 2000 || totalServices >=15000) {
     spanOut.textContent = "Multiple Licenses or a Sitewide Package"
+  } else if (totalNodes === 0) {  
+    spanOut.textContent = "Please Input Nodes Above";
   } else if (totalNodes > 0 && totalNodes < 100) {  
     spanOut.textContent = "100 Node License";
   } else if (totalNodes >= 100 && totalNodes < 200) {
@@ -85,9 +87,23 @@ function calculateProduct() {
   } else if (totalNodes >= 1000 && totalNodes < 2000) {
     spanOut.textContent = "Unlimited Node License"
   }  else {
-    spanOut.textContent = "error"
+    spanOut.textContent = "Input error. Review inputs for blank or non-real number values."
   }
 
 }
 
 
+
+function assignInputIDs(containerId) {
+  const container = document.getElementById(containerId); // get the container element by its ID
+  const inputs = container.getElementsByTagName('input'); // get all input elements in the container
+
+  let inputIdCounter = 1; // initialize a counter for the input IDs
+
+  // loop through each input element in the container
+  for (let i = 0; i < inputs.length; i++) {
+    const input = inputs[i]; // get the current input element
+    input.setAttribute('id', 'input-' + inputIdCounter); // set the input's ID attribute to 'input-' followed by the counter value
+    inputIdCounter++; // increment the counter for the next input
+  }
+}

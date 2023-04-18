@@ -156,9 +156,12 @@
 			</div> <!--end link buttons-->
 		 </div> <!--end output card-->
 	</div> <!--end card-box-->
+
+
 	<!--Embedded Javascript-->
 	<script>
-		function updateText() { //For Auto Updateding the Enterprise Plan output
+		//For Auto Updateding the Enterprise Plan output
+		function updateText() { 
 			const enterpriseChosen = document.getElementById('enterpriseChosen');
 			const standardChosen = document.getElementById('standardChosen');
 			const enterpriseSpan = document.getElementById('enterprisePlan');
@@ -176,6 +179,24 @@
 		const standardChosen = document.getElementById('standardChosen');
 		enterpriseChosen.addEventListener('change', updateText);
 		standardChosen.addEventListener('change', updateText);
+
+		
+		//Trigger 'onclick' for Calc button upon pressing enter key
+		var cusotmerInputs = document.querySelectorAll('input[type="number"]');
+		var button = document.getElementById("calcButton");
+
+		var customerInputs = document.querySelectorAll('input[type="number"]');
+		var calcButton = document.getElementById("calcButton");
+
+		customerInputs.forEach(function(input) {
+		input.addEventListener("keyup", function(event) {
+        // Number 13 is the "Enter" key on the keyboard
+        if (event.keyCode === 13) {
+            // Trigger the button element with a click
+            calcButton.click();
+        }
+    });
+});
 	</script>
   </body>
 </html>

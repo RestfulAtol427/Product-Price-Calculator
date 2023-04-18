@@ -70,6 +70,8 @@ function calculateProduct() {
 
   if (totalNodes >= 2000 || totalServices >=15000) {
     spanOut.textContent = "Multiple Licenses or a Sitewide Package"
+  } else if (totalNodes === 0) {  
+    spanOut.textContent = "Please Input Nodes Above";
   } else if (totalNodes > 0 && totalNodes < 100) {  
     spanOut.textContent = "100 Node License";
   } else if (totalNodes >= 100 && totalNodes < 200) {
@@ -85,9 +87,25 @@ function calculateProduct() {
   } else if (totalNodes >= 1000 && totalNodes < 2000) {
     spanOut.textContent = "Unlimited Node License"
   }  else {
-    spanOut.textContent = "error"
+    spanOut.textContent = "Input error. Review inputs for blank or non-real number values."
   }
 
 }
 
 
+//Dynamic ID assingment for inputs
+/*
+function assignInputIDs(containerId) {
+  const container = document.getElementById(containerId); // get the container element by its ID
+  const inputs = container.getElementsByTagName('input'); // get all input elements in the container
+
+  let inputIdCounter = 1; // initialize a counter for the input IDs
+
+  // loop through each input element in the container
+  for (let i = 0; i < inputs.length; i++) {
+    const input = inputs[i]; // get the current input element
+    input.setAttribute('id', 'input-' + inputIdCounter); // set the input's ID attribute to 'input-' followed by the counter value
+    inputIdCounter++; // increment the counter for the next input
+  }
+}
+*/

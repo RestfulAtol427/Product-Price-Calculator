@@ -91,3 +91,20 @@ function calculateProduct() {
 }
 
 
+
+//Dynamic ID assingment for inputs
+/*
+function assignInputIDs(containerId) {
+  const container = document.getElementById(containerId); // get the container element by its ID
+  const inputs = container.getElementsByTagName('input'); // get all input elements in the container
+
+  let inputIdCounter = 1; // initialize a counter for the input IDs
+
+  // loop through each input element in the container
+  for (let i = 0; i < inputs.length; i++) {
+    const input = inputs[i]; // get the current input element
+    input.setAttribute('id', 'input-' + inputIdCounter); // set the input's ID attribute to 'input-' followed by the counter value
+    inputIdCounter++; // increment the counter for the next input
+  }
+}
+*/

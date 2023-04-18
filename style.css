@@ -1,9 +1,9 @@
 /*font-family: 'Roboto', sans-serif;*/
 
 head, body, footer {
-	font-family: 'Roboto', sans-serif;
-	display: inline-block;
-	width: 100%;
+  font-family: 'Roboto', sans-serif;
+  display: inline-block;
+  width: 100%;
 }
 
 
@@ -45,7 +45,7 @@ td{
 }
 
 th{
-	text-align: justify;
+	text-align: left;
 }
 
 img {
@@ -81,6 +81,7 @@ input{
 	padding: 2em;
 	width: 60%;
 	min-height: 30em;
+	overflow: hidden;
 }
 
 
@@ -171,4 +172,52 @@ input.radioButton {
   visibility: visible;
   transition: ease-in;
 
+}
+
+/* Mobile media query
+@media only screen and (max-width: 768px) { 
+	table{
+		overflow-x: auto;
+	}
+	
+}
+*/
+
+/* Tablet media query */
+@media only screen and (max-width: 1024px) { 
+	
+	#card-box{
+		display:block;
+	}
+	
+	#input-card, #output-card{ /* fix box width */
+		width: 90%;
+		margin: 1.5em auto;
+		padding: 0.75em
+	}
+	
+	td{
+		padding: .2em;
+	}
+}
+
+/* media query to fix node services cut off*/
+@media only screen and (max-width: 1545px) { 
+	
+	#card-box{
+			display:block;
+		}
+	#input-card, #output-card{ /* fix box width */
+		width: 70%;
+		margin: 1.5em auto;
+		padding: 1.75em;
+	}
+}
+
+/* media query to fix link button row. */
+@media only screen and (max-width: 1737px) { 
+	
+	#link-buttons,.button{
+	display: inline-block;
+}
 }

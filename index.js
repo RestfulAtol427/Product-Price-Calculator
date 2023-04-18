@@ -70,6 +70,8 @@ function calculateProduct() {
 
   if (totalNodes >= 2000 || totalServices >=15000) {
     spanOut.textContent = "Multiple Licenses or a Sitewide Package"
+  } else if (totalNodes === 0) {  
+    spanOut.textContent = "Please Input Nodes Above";
   } else if (totalNodes > 0 && totalNodes < 100) {  
     spanOut.textContent = "100 Node License";
   } else if (totalNodes >= 100 && totalNodes < 200) {
@@ -85,7 +87,7 @@ function calculateProduct() {
   } else if (totalNodes >= 1000 && totalNodes < 2000) {
     spanOut.textContent = "Unlimited Node License"
   }  else {
-    spanOut.textContent = "error"
+    spanOut.textContent = "Input error. Review inputs for blank or non-real number values."
   }
 
 }

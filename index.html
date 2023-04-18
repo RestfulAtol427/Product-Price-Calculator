@@ -127,40 +127,42 @@
 
 			<!--Calculate on click - button-->
 			<button id="calcButton" onclick="calculateProduct()">Calculate Product</button>
+			<button id="reset-button">Reset All</button>
 		</div> <!--end input-card -->
+	
+		<div id= "output-card">
+			<h2>Recommended License Level</h2>
+			
+			<!--total services output-->
+			<div>
+				<p>Total Services to Monitor: <span id="totalServicesResult"></span>
+					<br>
+					Total Nodes required: <span id="totalNodesResult"></span></p>
+			</div>
+			<p>Based on inputs, the recommended license level is:
+				<br />
+				<span id="enterprisePlan">Choose license level</span> / 
+				<span id="nodeRecommend">input nodes</span>
+			</p>
+			<div id="link-buttons"> 
+				<a class="button" href="https://www.nagios.com/products/nagios-xi/buy/" target="_blank">
+					Buy XI now
+				</a>
+				<a class="button" href="https://www.nagios.com/contact/" target="_blank">
+					Contact Nagios
+				</a>
+				<a class="button" href="https://www.nagios.com/downloads/nagios-xi/" target="_blank">
+					30 Day Free Trial
+				</a>
+			</div> <!--end link buttons-->
+		</div> <!--end output card-->
 	</div> <!--end card-box-->
-
-	<div id= "output-card">
-		<h2>Recommended License Level</h2>
-		
-		<!--total services output-->
-		<div>
-			<p>Total Services to Monitor: <span id="totalServicesResult"></span>
-				<br>
-				Total Nodes required: <span id="totalNodesResult"></span></p>
-		</div>
-		<p>Based on inputs, the recommended license level is:
-			<br />
-			<span id="nodeRecommend"></span><span id="enterprisePlan"> at Enterprise level</span>
-		</p>
-		<div id="link-buttons"> 
-			<a class="button" href="https://www.nagios.com/products/nagios-xi/buy/" target="_blank">
-				Buy XI now
-			</a>
-			<a class="button" href="https://www.nagios.com/contact/" target="_blank">
-				Contact Nagios
-			</a>
-			<a class="button" href="https://www.nagios.com/downloads/nagios-xi/" target="_blank">
-				30 Day Free Trial
-			</a>
-		</div> <!--end link buttons-->
-	</div> <!--end output card-->
 
 
 	<!--Embedded Javascript-->
 	<script>
-		
-		assignInputIDs('input-card');
+
+		/* assignInputIDs('input-card'); */
 
 		function updateText() { //For Auto Updateding the Enterprise Plan output
 			const enterpriseChosen = document.getElementById('enterpriseChosen');
@@ -168,11 +170,11 @@
 			const enterpriseSpan = document.getElementById('enterprisePlan');
 		
 			if (enterpriseChosen.checked) {
-			enterpriseSpan.innerText = ' at Enterprise level';
+			enterpriseSpan.innerText = 'Enterprise level';
 			} else if (standardChosen.checked) {
-			enterpriseSpan.innerText = ' at Standard level';
+			enterpriseSpan.innerText = 'Standard level';
 			} else {
-			enterpriseSpan.innerText = ' at Enterprise level';
+			enterpriseSpan.innerText = 'Choose License Level';
 			}
 		}
 		

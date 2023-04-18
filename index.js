@@ -93,7 +93,8 @@ function calculateProduct() {
 }
 
 
-
+//Dynamic ID assingment for inputs
+/*
 function assignInputIDs(containerId) {
   const container = document.getElementById(containerId); // get the container element by its ID
   const inputs = container.getElementsByTagName('input'); // get all input elements in the container
@@ -107,3 +108,4 @@ function assignInputIDs(containerId) {
     inputIdCounter++; // increment the counter for the next input
   }
 }
+*/

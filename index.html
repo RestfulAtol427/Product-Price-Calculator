@@ -111,10 +111,22 @@
 						<td class="tooltip"><img src="Media/Images/help.png" alt="more info"><span class="tooltiptext">Other Device tips</span></td>
 						<td id="otherHost"><input id="num19" type="number" value="0" min="0"></td>
 						<td id="otherService"><input id="num20" type="number" value="8" min="0"></td>
-						<td id="otherServiceTotal"><span id="resultOther">Services: </span></td>
+						<td id="otherServiceTotal"><span id="resultOther">Services: </span></td>  
 					</tr>
 				</tbody>
 			</table>
+
+			<!--Enterprise Add-on Section-->
+			<div id="enterpriseRadioSelect"></div>
+				<legend>Upgrade to Enterprise Edition?</legend>
+				<input type="radio" id="enterpriseChosen" name="enterpriseUpgrade" value="enterpriseChosen" />
+				<label for="enterpriseChosen">Upgrade</label>
+				<input type="radio" id="standardChosen" name="enterpriseUpgrade" value="standardChosen" />
+				<label for="standardChosen">Standard</label>
+			</div>
+		</div> <!--end input-card -->
+		<div id= "output-card">
+			<h2>Recommended License Level</h2>
 			<!--Calculate on click - button-->
 			<button id="calcButton" onclick="calculateProduct()">Calculate Product</button>
 			<!--total services output-->
@@ -123,31 +135,10 @@
 					<br>
 					Total Nodes required: <span id="totalNodesResult"></span></p>
 			</div>
-			<!--Enterprise Add-on Section-->
-			
-			<form>
-				<legend>Upgrade to Enterprise Edition?</legend>
-				<div id="enterpriseRadioSelect">
-					<input type="radio" class="radioButton" id="xiEnterpriseChosen" name="xiEnterpriseUpgrade" value="xiEnterpriseChosen" checked />
-					<label for="xiEnterpriseChosen">
-						Upgrade
-					</label>
-					<input type="radio" class="radioButton" id="xiStandardChosen" name="xiEnterpriseUpgrade" value="xiStandardChosen" />
-					<label for="xiStandardChosen">
-						Standard
-					</label>
-				</div>
-			</form>
-		
-		</div> <!--end input-card -->
-		<div id= "output-card">
-
-			<h2>Recommended License Level</h2>
 			<p>Based on inputs, the recommended license level is:
 				<br />
-				<span id="nodeRecommend"></span> at <span id="enterprisePlan"></span> level.
+				<span id="nodeRecommend"></span><span id="enterprisePlan"> at Enterprise level</span>
 			</p>
-
 			<div id="link-buttons"> 
 				<a class="button" href="https://www.nagios.com/products/nagios-xi/buy/" target="_blank">
 					Buy XI now
@@ -160,6 +151,27 @@
 			  	</a>
 			</div> <!--end link buttons-->
 		 </div> <!--end output card-->
-	  </div> <!--end card-box-->
+	</div> <!--end card-box-->
+	<!--Embedded Javascript-->
+	<script>
+		function updateText() { //For Auto Updateding the Enterprise Plan output
+			const enterpriseChosen = document.getElementById('enterpriseChosen');
+			const standardChosen = document.getElementById('standardChosen');
+			const enterpriseSpan = document.getElementById('enterprisePlan');
+		
+			if (enterpriseChosen.checked) {
+			enterpriseSpan.innerText = ' at Enterprise level';
+			} else if (standardChosen.checked) {
+			enterpriseSpan.innerText = ' at Standard level';
+			} else {
+			enterpriseSpan.innerText = ' at Enterprise level';
+			}
+		}
+		
+		const enterpriseChosen = document.getElementById('enterpriseChosen');
+		const standardChosen = document.getElementById('standardChosen');
+		enterpriseChosen.addEventListener('change', updateText);
+		standardChosen.addEventListener('change', updateText);
+	</script>
   </body>
-</html><!--test-->
+</html>

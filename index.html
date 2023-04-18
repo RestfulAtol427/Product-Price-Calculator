@@ -17,10 +17,12 @@
 	<div id="card-box">
 		<div id="input-card">
   	 		<h1> Nagios XI Node Calculator</h1>
-			<label for="xiLecenseQuote">
+			<div id="locations-to-monitor">
+				<label for="xiLecenseQuote">
 				Number of locations to monitor:
-			</label>
-			<input id="xiLicenseQuote" type="number" value="1" min="1" max="50" />
+				</label>
+				<input id="xiLicenseQuote" type="number" value="1" min="1" max="50" />
+			</div> <!--end locations-to-monitor -->
 			<table id="my-table">
 				<thead id="nodeTableHead">
 					<tr id="nodeTableHeadRow">
@@ -131,19 +133,18 @@
 		</div> <!--end input-card -->
 	
 		<div id= "output-card">
-			<h2>Recommended License Level</h2>
-			
+			<h2>Nagios Reccomended License Level: </h2>
+						<p>Based on inputs, the recommended license level is: 	</p>
+			<h3>
+				<span id="enterprisePlan">Choose license level</span> / 
+				<span id="nodeRecommend">input nodes</span>
+			</h3>
 			<!--total services output-->
 			<div>
 				<p>Total Services to Monitor: <span id="totalServicesResult"></span>
 					<br>
 					Total Nodes required: <span id="totalNodesResult"></span></p>
 			</div>
-			<p>Based on inputs, the recommended license level is:
-				<br />
-				<span id="enterprisePlan">Choose license level</span> / 
-				<span id="nodeRecommend">input nodes</span>
-			</p>
 			<div id="link-buttons"> 
 				<a class="button" href="https://www.nagios.com/products/nagios-xi/buy/" target="_blank">
 					Buy XI now

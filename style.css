@@ -40,14 +40,29 @@ button:hover {
 	transform: scale(1.1);
 }
 
+td{
+	padding: 0.2em 1.5em 0.2em 0em;
+}
 
-/*ID below*/
+th{
+	text-align: left;
+}
 
 img {
   height: 20px;
   width: 20px;
 }
 
+input{
+	padding: 0.2em 0.3em
+}
+
+
+/*ID below*/
+
+#locations-to-monitor{
+	padding: 0em 0em 2em 0em
+}
 
 #card-box{
 	display: flex;
@@ -60,20 +75,20 @@ img {
 
 #input-card{
 	display:block;
-	background-color: #FFFFFF;
+	background-color: #F4F7FB;
 	border-radius: 5px;
-	
 	margin: 2em;
 	padding: 2em;
 	width: 60%;
 	min-height: 30em;
+	overflow: hidden;
 }
 
 
 
 #output-card{
 	display: block;
-	background-color: #FFFFFF;
+	background-color: #F4F7FB;
 	border-radius: 5px;
 	
 	margin: 2em;
@@ -107,7 +122,6 @@ input.radioButton {
 	font-weight: 600;
 	transition-duration: .3s;
 	text-decoration: none;
-	
 	cursor: pointer;
 	margin: 1em auto;
 }
@@ -158,4 +172,52 @@ input.radioButton {
   visibility: visible;
   transition: ease-in;
 
+}
+
+/* Mobile media query
+@media only screen and (max-width: 768px) { 
+	table{
+		overflow-x: auto;
+	}
+	
+}
+*/
+
+/* Tablet media query */
+@media only screen and (max-width: 1024px) { 
+	
+	#card-box{
+		display:block;
+	}
+	
+	#input-card, #output-card{ /* fix box width */
+		width: 90%;
+		margin: 1.5em auto;
+		padding: 0.75em
+	}
+	
+	td{
+		padding: .2em;
+	}
+}
+
+/* media query to fix node services cut off*/
+@media only screen and (max-width: 1545px) { 
+	
+	#card-box{
+			display:block;
+		}
+	#input-card, #output-card{ /* fix box width */
+		width: 70%;
+		margin: 1.5em auto;
+		padding: 1.75em;
+	}
+}
+
+/* media query to fix link button row. */
+@media only screen and (max-width: 1737px) { 
+	
+	#link-buttons,.button{
+	display: inline-block;
+}
 }

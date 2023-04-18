@@ -64,64 +64,30 @@ function calculateProduct() {
   document.getElementById('totalNodesResult').textContent = `${totalNodes}`;
 
 
-
+  var totalServices = parseInt(document.getElementById('totalServicesResult').textContent);
   var totalNodes = parseInt(document.getElementById('totalNodesResult').textContent);
   var spanOut = document.getElementById('nodeRecommend');
 
-  if (totalNodes > 0 && totalNodes < 100) {
-    spanOut.textContent = "100 node";
+  if (totalNodes >= 2000 || totalServices >=15000) {
+    spanOut.textContent = "Multiple Licenses or a Sitewide Package"
+  } else if (totalNodes > 0 && totalNodes < 100) {  
+    spanOut.textContent = "100 Node License";
   } else if (totalNodes >= 100 && totalNodes < 200) {
-    spanOut.textContent = "200 node";
+    spanOut.textContent = "200 Node License";
   } else if (totalNodes >= 200 && totalNodes < 300) {
-    spanOut.textContent = "300 node";
+    spanOut.textContent = "300 Node License";
   } else if (totalNodes >= 300 && totalNodes < 400) {
-    spanOut.textContent = "400 node";
+    spanOut.textContent = "400 Node License";
   } else if (totalNodes >= 400 && totalNodes < 500) {
-    spanOut.textContent = "500 node";
+    spanOut.textContent = "500 Node License";
   } else if (totalNodes >= 500 && totalNodes < 1000) {
-    spanOut.textContent = "1000 node";
+    spanOut.textContent = "1000 Node License";
   } else if (totalNodes >= 1000 && totalNodes < 2000) {
-    spanOut.textContent = "Unlimited node"
-  } else if (totalNodes >= 2000) {
-    spanOut.textContent = "Multiple Licenses / Sitewide Package"
-  } else {
+    spanOut.textContent = "Unlimited Node License"
+  }  else {
     spanOut.textContent = "error"
   }
 
 }
 
-
-
-//Auto-updating the recommendation when a calculation is made
-/*var recommendLicense = parseInt();
-
-`100`
-
-`200`
-
-`300`
-
-`400`
-
-`500`
-
-`1000`
-
-`Unlimited`
-*/
-
-
-//Update Recommendation to show Standard or Enterprise plan text
-//var enterpriseEditionVar = doocument.getElementById('xiEnterpriseChosen')
-/*
-var enterprisePlan = document.getElementById('xiEnterpriseChosen')
-
-function eventHandler(get) {
-  if (enterprisePlan.value === 'Enterprise') {
-    document.getElementById('enterprisePlan').textContent = `Enterprise`;
-  } else if (enterprisePlan.value === 'Standard') {
-    document.getElementById('enterprisePlan').textContent = `Standard`;
-  }
-}
-*/
 

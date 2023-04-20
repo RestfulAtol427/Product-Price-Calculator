@@ -138,6 +138,12 @@ input.radioButton {
 
 /* classes below */
 
+ .disclaimer {
+    font-size: 9pt;
+    margin: 0 0 20px 0;
+}
+
+
 .button {
 	display: block;
 	border: 2px #4D89F9;

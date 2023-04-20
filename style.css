@@ -2,7 +2,7 @@
 
 head, body, footer {
   font-family: 'Roboto', sans-serif;
-  display: inline-block;
+  display: flex;
   width: 100%;
 }
 
@@ -13,6 +13,8 @@ html{
 	background-size: cover;
 }
 
+h1 {
+}
 
 button {
 	border: 2px #4D89F9;
@@ -23,7 +25,6 @@ button {
 	color: #FFFFFF;
 	font-weight: 600;
 	transition-duration: .3s;
-	
 	cursor: pointer;
 	margin: 1em auto;
 }
@@ -64,6 +65,12 @@ table{
 
 /*ID below*/
 
+#inputHeading {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
 #locations-to-monitor{
 	padding: 1em 0em 2em 0em;
 }
@@ -94,11 +101,30 @@ table{
 	display: block;
 	background-color: #F4F7FB;
 	border-radius: 5px;
-	
 	margin: 2em;
 	padding: 2em;
 	width: 40%;
 	min-height: 30em;
+}
+
+#link-buttons, #calcResetSection {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	flex-wrap: nowrap;
+}
+
+#calcButton {
+	margin: auto auto auto 48%;
+}
+
+#reset-button {
+	margin: auto 5% auto auto;
+}
+
+#totalNodesP {
+	display: none;
 }
 
 /* ID-Class combos */
@@ -108,16 +134,12 @@ input.radioButton {
 }
 
 
-#link-buttons,.button{
-	justify-content: space-evenly;
-	margin: 0.5em!important; /* Button row breaks/condenses without the important tag */
-	display: inline;
-}
 
 
 /* classes below */
 
 .button {
+	display: block;
 	border: 2px #4D89F9;
 	border-radius: 5px;
 	padding: 12px 24px;
@@ -127,8 +149,11 @@ input.radioButton {
 	transition-duration: .3s;
 	text-decoration: none;
 	cursor: pointer;
-	margin: 1em auto;
+	height: 100%;
+	width: 22%;
+	margin: 20px auto;
 }
+
 
 
 .button:hover {
@@ -192,10 +217,10 @@ input.radioButton {
 	
 	#card-box{
 		display:block;
+		width: 100%;
 	}
 	
 	#input-card, #output-card{ /* fix box width */
-		width: 90%;
 		margin: 1.5em auto;
 		padding: 0.75em
 	}
@@ -212,7 +237,7 @@ input.radioButton {
 			display:block;
 		}
 	#input-card, #output-card{ /* fix box width */
-		width: 70%;
+		width: 90%;
 		margin: 1.5em auto;
 		padding: 1.75em;
 	}

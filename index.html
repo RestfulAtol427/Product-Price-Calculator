@@ -16,7 +16,9 @@
   <body>
 	<div id="card-box">
 		<div id="input-card">
-  	 		<h1> Nagios XI Node Calculator</h1>
+			<div id="inputHeading">
+  	 			<h1> Nagios XI Node Calculator</h1>
+			</div>
 			<div id="locations-to-monitor">
 				<label for="xiLecenseQuote">
 				Number of locations to monitor:
@@ -38,7 +40,7 @@
 					<!--linux server-->
 					<tr id="linuxServerRow">
 						<td id="linuxServerType">Linux Servers</td>
-						<td class="tooltip"><img src="Media/Images/help.png" alt="more info"><span class="tooltiptext">Linux Servers tips</span></td>
+						<td class="tooltip" ><img src="Media/Images/help.png" alt="more info"><span class="tooltiptext">Linux Servers tips</span></td>
 						<td id="linuxServerHost"><input id="n01" type="number" value="0" min="0"></td>
 						<td id="linuxServerService"><input id="s01" type="number" value="8" min="0"></td>
 						<td id="linuxServerServiceTotal"><span id="resultLinuxServer">Services: </span></td>
@@ -129,10 +131,10 @@
 
 
 			</div>
-
-			<!--Calculate on click - button-->
-			<button id="calcButton" onclick="calculateProduct()">Calculate Product</button>
-			<button id="reset-button">Reset All</button>
+			<div id="calcResetSection">
+				<button class="button" id="calcButton" onclick="calculateProduct()">Calculate</button>
+				<button class="button" id="reset-button">Reset All</button>
+			</div>
 		</div> <!--end input-card -->
 	
 		<div id= "output-card">
@@ -145,20 +147,19 @@
 
 			<!--total services output-->
 			<div>
-				<p>Total Services to Monitor: <span id="totalServicesResult"></span>
-					<br>
-					Total Nodes required: <span id="totalNodesResult"></span></p>
+				<p>Total Services to Monitor: <span id="totalServicesResult"></span></p>
+				<p id="totalNodesP">Total Nodes required: <span id="totalNodesResult"></span></p>
 			</div>
 
 			<div id="link-buttons"> 
-				<a class="button" href="https://www.nagios.com/products/nagios-xi/buy/" target="_blank">
+				<a class="button" id="buyButton" href="https://www.nagios.com/products/nagios-xi/buy/" target="_blank">
 					Buy XI now
 				</a>
-				<a class="button" href="https://www.nagios.com/contact/" target="_blank">
-					Contact Nagios
+				<a class="button" id="contactButton" href="https://www.nagios.com/contact/" target="_blank">
+					Contact Us
 				</a>
-				<a class="button" href="https://www.nagios.com/downloads/nagios-xi/" target="_blank">
-					30 Day Free Trial
+				<a class="button" id="trialButton" href="https://www.nagios.com/downloads/nagios-xi/" target="_blank">
+					Free Trial
 				</a>
 			</div> <!--end link buttons-->
 		</div> <!--end output card-->

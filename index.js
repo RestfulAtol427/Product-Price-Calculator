@@ -68,8 +68,9 @@ function calculateProduct() {
   var totalNodes = parseInt(document.getElementById('totalNodesResult').textContent);
   var spanOut = document.getElementById('nodeRecommend');
 
+
   if (totalNodes >= 2000 || totalServices >=15000) {
-    spanOut.textContent = "Multiple Licenses or a Sitewide Package"
+    spanOut.textContent = "Multiple Licenses or a Sitewide Package";
   } else if (totalNodes === 0) {  
     spanOut.textContent = "Please Input Nodes Above";
   } else if (totalNodes > 0 && totalNodes < 100) {  
@@ -85,9 +86,23 @@ function calculateProduct() {
   } else if (totalNodes >= 500 && totalNodes < 1000) {
     spanOut.textContent = "1000 Node License";
   } else if (totalNodes >= 1000 && totalNodes < 2000) {
-    spanOut.textContent = "Unlimited Node License"
+    spanOut.textContent = "Unlimited Node License";
   }  else {
-    spanOut.textContent = "Input error. Review inputs for blank or non-real number values."
+    spanOut.textContent = "Input error. Review inputs for blank or non-real number values.";
+  }
+
+
+  //Cuation Icon Show/Hide
+  const toggleCaution = document.querySelector('.cautionUpdate');
+  const classNameToAdd = 'showIcon';
+  const classNameToRemove = 'hideIcon';
+
+  if (totalServices >= 15000) {
+    toggleCaution.classList.add(classNameToAdd);
+    toggleCaution.classList.remove(classNameToRemove);
+  } else {
+    toggleCaution.classList.add(classNameToRemove);
+    toggleCaution.classList.remove(classNameToAdd);
   }
 
 }
